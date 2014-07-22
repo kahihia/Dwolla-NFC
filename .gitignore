@@ -19,4 +19,10 @@ node_modules
 ehthumbs.db
 Thumbs.db
 
+# CORDOVA #
+###########
+platforms/android/ant-build
+platforms/android/local.properties
+platforms/android/assets/www
+
 www/scripts/config.js
