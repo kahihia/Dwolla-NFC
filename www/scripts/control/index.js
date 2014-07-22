@@ -3,6 +3,8 @@ var app = {
     token: null,
     TOKEN: 'com.dwolla.nfc_token',
 
+    subDomain: 'www',
+
     O_AUTH_CALLBACK: 'dwolla-nfc://callback/tempcode',
 
     TAG_MIME_TYPE: 'dwolla/nfc',
@@ -11,6 +13,10 @@ var app = {
     TRANSACTION_CANCEL_DELAY: 45000,
 
     initialize: function() {
+        if (config.SANDBOX) {
+            app.subDomain = 'uat';
+        }
+
         app.token = window.localStorage[app.TOKEN];
 
         if (app.token == undefined) {
@@ -60,7 +66,7 @@ var app = {
     },
 
     authenticate: function() {
-        var baseURL = 'https://' + app.SUB_DOMAIN + '.dwolla.com/oauth/v2/authenticate?';
+        var baseURL = 'https://' + app.subDomain + '.dwolla.com/oauth/v2/authenticate?';
         var clientID = 'client_id=' + encodeURIComponent(config.getAPIKey());
         var responseType = '&response_type=' + encodeURIComponent('code');
         var redirectURI = '&redirect_uri=' + encodeURIComponent(app.O_AUTH_CALLBACK);
@@ -72,7 +78,7 @@ var app = {
 
     getToken: function(code) {
         $('#buffering').css('display', 'block');
-        var baseURL = 'https://' + app.SUB_DOMAIN + '.dwolla.com/oauth/v2/token?';
+        var baseURL = 'https://' + app.subDomain + '.dwolla.com/oauth/v2/token?';
         var clientID = 'client_id=' + encodeURIComponent(config.getAPIKey());
         var clientSecret = '&client_secret=' + encodeURIComponent(config.getAPISecret());
         var grantType = '&grant_type=' + encodeURIComponent('authorization_code');
