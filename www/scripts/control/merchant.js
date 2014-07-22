@@ -38,7 +38,7 @@ merchant = {
         var anHourAgo = new Date(new Date().getTime() - 3600000);
         merchant.lookForTransaction_ajax = $.ajax({
             'type': 'GET',
-            'url': 'https://' + app.SUB_DOMAIN + '.dwolla.com/oauth/rest/transactions/',
+            'url': 'https://' + app.subDomain + '.dwolla.com/oauth/rest/transactions/',
             'data': {
                 'oauth_token': app.token,
                 'sinceDate': anHourAgo.toUTCString(),
@@ -198,7 +198,7 @@ merchant = {
         function getBasicInfo() {
             $.ajax({
                 'type': 'GET',
-                'url': 'https://' + app.SUB_DOMAIN + '.dwolla.com/oauth/rest/users/',
+                'url': 'https://' + app.subDomain + '.dwolla.com/oauth/rest/users/',
                 'data': {
                     'oauth_token': app.token
                 },

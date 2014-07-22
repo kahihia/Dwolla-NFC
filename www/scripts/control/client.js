@@ -1,4 +1,4 @@
-client = {
+var client = {
 
     payTransaction_ajax: null,
 
@@ -25,7 +25,7 @@ client = {
     getBalance: function() {
         $.ajax({
             'type': 'GET',
-            'url': 'https://' + app.SUB_DOMAIN + '.dwolla.com/oauth/rest/balance/',
+            'url': 'https://' + app.subDomain + '.dwolla.com/oauth/rest/balance/',
             'data': {
                 'oauth_token': app.token
             },
@@ -107,7 +107,7 @@ client = {
                 'type': 'POST',
                 'datatype': "json",
                 'contentType': "application/json; charset=utf-8",
-                'url': 'https://' + app.SUB_DOMAIN + '.dwolla.com/oauth/rest/transactions/send',
+                'url': 'https://' + app.subDomain + '.dwolla.com/oauth/rest/transactions/send',
                 'data': JSON.stringify({
                     "oauth_token": app.token,
                     "pin": pinNum,
