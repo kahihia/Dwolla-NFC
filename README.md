@@ -2,6 +2,12 @@
 
 This is an Android Cordova app, an understanding of Cordova is needed to build the application. Pre-built application files will be found on [troyblank.com](http://troyblank.com, "Troy Blank dot Com") in the near future.
 
+##Installation
+
+To install the Android platform as well as required plugins run the following in the project.
+
+    ./install.sh
+
 ##Configuration
 First you must copy the example config to make a place to enter your Dwolla API Keys.
 

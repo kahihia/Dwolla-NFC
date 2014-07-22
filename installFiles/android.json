@@ -1,0 +1,48 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "res/xml/config.xml": {
+                "parents": {
+                    "/*": [{
+                        "xml": "<feature name=\"WebIntent\"><param name=\"android-package\" value=\"com.borismus.webintent.WebIntent\" /></feature>",
+                        "count": 1
+                    }, {
+                        "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
+                        "count": 1
+                    }],
+                    "/widget": [{
+                        "xml": "<feature name=\"NfcPlugin\"><param name=\"android-package\" value=\"com.chariotsolutions.nfc.plugin.NfcPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                        "count": 1
+                    }]
+                }
+            },
+            "AndroidManifest.xml": {
+                "parents": {
+                    "/manifest": [{
+                        "xml": "<uses-permission android:name=\"android.permission.NFC\" />",
+                        "count": 1
+                    }, {
+                        "xml": "<uses-feature android:name=\"android.hardware.nfc\" android:required=\"true\" />",
+                        "count": 1
+                    }]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "com.borismus.webintent": {
+            "PACKAGE_NAME": "com.dwolla.dwollaNFC"
+        },
+        "org.apache.cordova.inappbrowser": {
+            "PACKAGE_NAME": "com.dwolla.dwollaNFC"
+        },
+        "com.chariotsolutions.nfc.plugin": {
+            "PACKAGE_NAME": "com.dwolla.dwollaNFC"
+        }
+    },
+    "dependent_plugins": {}
+}
