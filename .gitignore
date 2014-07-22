@@ -21,11 +21,7 @@ Thumbs.db
 
 # CORDOVA #
 ###########
-platforms/android/ant-build
-platforms/android/ant-gen
-platforms/android/local.properties
-platforms/android/assets/www
-platforms/android/CordovaLib/ant-build
-platforms/android/CordovaLib/ant-gen
+platforms
+plugins
 
 www/scripts/config.js
