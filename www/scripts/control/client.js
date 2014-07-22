@@ -12,7 +12,7 @@ var client = {
 
 
     addListeners: function() {
-        //nfc.addMimeTypeListener(app.TAG_MIME_TYPE, client.onTagDiscovered, client.onTagDiscovered_success, client.onTagDiscovered_fail);
+        nfc.addMimeTypeListener(app.TAG_MIME_TYPE, client.onTagDiscovered, client.onTagDiscovered_success, client.onTagDiscovered_fail);
         app.addEventListener(app.TRANSACTION_CANCELED, client.transactionCanceledHand);
 
         //this currently does not work: no way to remove this listener :(

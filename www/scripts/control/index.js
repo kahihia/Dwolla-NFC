@@ -151,9 +151,3 @@ var app = {
 };
 
 document.addEventListener('deviceready', app.initialize);
-
-setTimeout(function() {
-    baseUI.initialize();
-    client.initialize();
-    merchant.initialize();
-}, 50);
