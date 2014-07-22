@@ -1,0 +1,22 @@
+#name .gitignore
+
+# NODE #
+#########
+node_modules
+
+# SASS #
+########
+.sass-cache
+*.css.map
+
+# OS GENERATED FILES #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+www/scripts/config.js

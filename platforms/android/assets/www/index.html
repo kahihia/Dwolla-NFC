@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="styles/styles.css" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <title>Dwolla NFC</title>
+    </head>
+    <body>
+        <div id="log"><ul></ul></div>
+        <div class="app">
+            <header>
+                <div class="login-name"></div>
+                <h1>Dwolla NFC</h1>
+                <div class="gear"></div>
+                <ul>
+                    <li data-mode="client">Client Mode</li>
+                    <li data-mode="merchant">Merchant Mode</li>
+                </ul>
+            </header>
+            <section id="confirmation" class="notification">
+                <div class="notes">
+                    <h2></h2>
+                    <p></p>
+                </div>
+            </section>
+            <section id="cancel" class="notification">
+                <div class="notes">
+                    <h2></h2>
+                    <p></p>
+                </div>
+            </section>
+            <section id="buffering"></section>
+            <section id="number-pad">
+                <h2>Enter Your Pin</h2>
+                <div class="progress">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="error"></div>
+                <hr />
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
+                <button>7</button>
+                <button>8</button>
+                <button>9</button>
+                <button class="mid">0</button>
+            </section>
+
+            <section id="client" class="mode">
+                <div id="balance"></div>
+                <p>Tab device to purchase the goods.</p>
+            </section>
+
+            <section id="merchant" class="mode">
+                <div id="merchant-status">idle</div>
+                <label for="cost">Cost</label>
+                <input type="number" id="cost" name="cost" step="any" min="0" />
+                <input type="submit" id="stage" name="stage" value="Request" />
+                <input type="submit" id="cancel" name="cancel" value="Cancel" disabled="true" />
+            </section>
+        </div>
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="scripts/plugin/hce.js"></script>
+        <script type="text/javascript" src="scripts/lib/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="scripts/util/baseUtil.js"></script>
+        <script type="text/javascript" src="scripts/control/baseUI.js"></script>
+        <script type="text/javascript" src="scripts/control/index.js"></script>
+        <script type="text/javascript" src="scripts/control/notification.js"></script>
+        <script type="text/javascript" src="scripts/control/pin.js"></script>
+        <script type="text/javascript" src="scripts/control/merchant.js"></script>
+        <script type="text/javascript" src="scripts/control/client.js"></script>
+    </body>
+</html>

@@ -1,0 +1,113 @@
+@import "reset.scss";
+
+// Box size all the things!
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* ------ UTILS ------- */
+
+%clearfix {
+    zoom: 1;
+    &:before{
+        content: "\0020"; display: block; overflow: hidden; visibility: hidden; width: 0; height: 0;
+    }
+    &:after{
+        content: "\0020"; display: block; overflow: hidden; visibility: hidden; width: 0; height: 0; clear: both;
+    }
+}
+
+
+/* ------ COLORS ------- */
+$black: #222222;
+$white: #ffffff;
+$grey: #7f7f7f;
+$orange: #fc6400;
+$red: #ff0000;
+$green: #56b913;
+
+/* ------ STYLES ------- */
+
+body { color:$white; background:$black; }
+
+h1 { color:$orange; margin:0; text-align:center; text-transform:uppercase; }
+h2 { margin:0; text-align:center; text-transform:uppercase; }
+
+hr { background:$white; border:1px $white; height:1px; margin:5px 0; }
+
+button { background:transparent; border:0; padding:0; }
+
+header{
+    position:relative; padding:15px 10px;
+    .login-name { position:absolute; top:5px; right:10px; font-size:10px; }
+    .gear{
+        width:25px; height:25px; position:absolute; top:20px; right:10px; background: url("../images/gear.png"); cursor:pointer;
+    }
+    ul { 
+        display:none; position:absolute; width:100%; left:0; background:$white;
+        &.active { display:block; }
+        li { list-style:none; color:$orange; text-align:center; padding:10px; cursor:pointer; border-bottom:2px solid $grey; }
+    }
+}
+
+label { display:block; text-align:center; text-transform:uppercase; margin-bottom:5px; position:relative; z-index:10;
+        &[for="cost"]:after { position:absolute; content:""; width:20px; height:30px; background: url("../images/dollarSign.png"); left:5px; top:35px; display:block; }
+    }
+input {
+    width: 100%; height:50px; text-align:center; position:relative; z-index:5; margin-bottom:30px;
+    &[type="submit"] { text-transform:uppercase; }
+}
+
+#client {
+    display:none; padding:0px 10px;
+    #balance { text-align:center; font-size:26px; font-weight:bold; }
+    p { text-align: center; }
+}
+
+#number-pad {
+    width: 100%; height:100%; margin-top:2%; position: absolute; top:0; left:0; background:$orange; display:none; z-index:1;
+    h2 {
+        margin:2% 0;
+    }
+    button {
+        width:33.3%; height:18%; display:block; float:left; color:$white; font-size:2em;
+        &.mid { margin-left:33.3%; }
+    }
+    .progress {
+        width:100%; text-align: center; margin-bottom:2%;
+        @extend %clearfix;
+        & > div {
+            width:25px; height:25px; border: 2px solid $white; display:inline-block; margin:0 10px; border-radius: 13px;
+            &.active { background:$white; }
+        }
+    }
+    .error{
+        color:$red; text-align:center; background:$black; margin:1% 0; padding:1% 0;
+    }
+}
+
+#merchant {
+    display:none;
+    #merchant-status { text-align:center; font-weight:bold; background:$grey; padding:5px 10px; margin-bottom:20px; }
+}
+
+#buffering {
+    width: 100%; height:100%; position: absolute; top:0; left:0; background:rgba(0, 0, 0, 0.5); display:none; z-index:10;
+    &:after { position:absolute; content:""; width:220px; height:220px; background: url("../images/buffer.gif"); left:50%; top:50%; margin:-110px 0 0 -110px; display:block; }
+}
+
+.notification {
+    width: 100%; height:100%; position: absolute; top:0; left:0; background:$green; display:none;
+    &#confirmation {
+        background:$green; z-index:15;
+        &:after { background-image: url("../images/icon-success-lg.png"); }
+    }
+    &#cancel {
+        background:$red; z-index:14;
+        &:after { background-image: url("../images/icon-cancel-lg.png"); }
+    }
+    &:after { position:absolute; content:""; width:100px; height:100px; background-size: 100% 100%; left:50%; top:30%; margin:-50px 0 0 -50px; display:block; }
+    .notes { width:80%; position:absolute; top:50%; text-align:center; left:10%; }
+}
