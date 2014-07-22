@@ -104,7 +104,7 @@ input {
         background:$green; z-index:15;
         &:after { background-image: url("../images/icon-success-lg.png"); }
     }
-    &#cancel {
+    &#canceled {
         background:$red; z-index:14;
         &:after { background-image: url("../images/icon-cancel-lg.png"); }
     }

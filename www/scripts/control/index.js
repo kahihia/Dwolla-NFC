@@ -45,7 +45,7 @@ var app = {
         notification.show({
             'headline': 'Transaction Canceled',
             'text': 'The time to make a transaction has exceeded, please try again'
-        }, 'cancel');
+        }, 'canceled');
         app.dispatchEvent(app.TRANSACTION_CANCELED);
     },
 
@@ -151,3 +151,9 @@ var app = {
 };
 
 document.addEventListener('deviceready', app.initialize);
+
+setTimeout(function() {
+    baseUI.initialize();
+    client.initialize();
+    merchant.initialize();
+}, 50);
