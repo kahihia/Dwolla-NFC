@@ -97,11 +97,11 @@ var client = {
             amount = data.amount;
             name = data.name;
             pin.getPin(sendMoneyHand);
+            app.startCancelTimer();
         }
 
         function sendMoneyHand(pinNum) {
             $('#buffering').css('display', 'block');
-            app.startCancelTimer();
 
             client.payTransaction_ajax = $.ajax({
                 'type': 'POST',
@@ -152,6 +152,7 @@ var client = {
     //---------------------------------------------------------------------------------------------
     transactionCanceledHand: function() {
         $('#buffering').css('display', 'none');
+        pin.hidePad();
         if (client.payTransaction_ajax != null) {
             client.payTransaction_ajax.abort();
         }

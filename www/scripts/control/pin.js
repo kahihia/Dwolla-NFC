@@ -15,6 +15,10 @@ var pin = {
         pin.showPad();
     },
 
+    hidePad: function() {
+        $('#number-pad').hide();
+    },
+
     displayError: function(message) {
         pin.clearPad();
         pin.showError(message);
@@ -35,10 +39,6 @@ var pin = {
     showPad: function() {
         pin.clearPad();
         $('#number-pad').show();
-    },
-
-    hidePad: function() {
-        $('#number-pad').hide();
     },
 
     updateProgressBar: function() {
